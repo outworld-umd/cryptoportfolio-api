@@ -31,8 +31,8 @@ public class CryptoCurrencyController {
 
     @PostMapping("/add")
     ResponseEntity<ResponseDTO<Object>> create(@Valid @RequestBody CryptoCurrency cryptoCurrency) {
-        ResponseDTO<Object> responseDTO = ResponseDTO.builder()
-                .body(cryptoCurrencyService.create(cryptoCurrency)).build();
+        cryptoCurrencyService.create(cryptoCurrency);
+        ResponseDTO<Object> responseDTO = ResponseDTO.builder().build();
         return ResponseEntity.status(HttpStatus.CREATED).body(responseDTO);
     }
 

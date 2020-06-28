@@ -25,7 +25,6 @@ public class PortfolioItemDTO {
     @Positive(message = "Amount must be positive")
     private BigDecimal amount;
 
-    @Past(message = "Date cannot be in the future")
     private Date dateOfPurchase;
 
     @Size(max = 100, message = "Location must not exceed 100 characters")
