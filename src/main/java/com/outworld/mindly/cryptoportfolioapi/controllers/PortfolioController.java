@@ -33,8 +33,8 @@ public class PortfolioController {
 
     @PostMapping("/add")
     ResponseEntity<ResponseDTO<Object>> create(@Valid @RequestBody PortfolioItemDTO portfolioItemDTO) {
-        ResponseDTO<Object> responseDTO = ResponseDTO.builder()
-                .body(portfolioItemService.create(portfolioItemDTO)).build();
+        portfolioItemService.create(portfolioItemDTO);
+        ResponseDTO<Object> responseDTO = ResponseDTO.builder().build();
         return ResponseEntity.status(HttpStatus.CREATED).body(responseDTO);
     }
 
