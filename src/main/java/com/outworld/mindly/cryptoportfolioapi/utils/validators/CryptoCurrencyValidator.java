@@ -17,6 +17,6 @@ public class CryptoCurrencyValidator implements ConstraintValidator<CryptoCurren
     }
 
     public boolean isValid(CryptoCurrency obj, ConstraintValidatorContext context) {
-        return cryptoCurrencyService.exists(Example.of(obj));
+        return obj != null && cryptoCurrencyService.exists(Example.of(obj));
     }
 }
